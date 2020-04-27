@@ -1,0 +1,29 @@
+Lecture 5.1
+Power spectra
+
+Fourier Transform - Periodogram
+	Discrete Fourier Transform
+	abs(DFT)**^2
+
+	Mathematical representation
+		P(f_k = \frac{k}{T}) = [X[k]]^2
+
+	Example estimate provides peak at 2Hz
+	
+	Increasing the duration of the data (T) increases frequency precision(resolution)
+		\delta f = \frac{1}{T}
+		increasing duration decreases spacing between bands meaning more easy to
+			tell the frequency, but the noise has not gotten better
+
+Welch's method - a better PSD estimation
+	Designate an estimator with lower variance
+		variance here is referring to the similar shape but varying fluctuations of 				the signal
+
+	Want to smooth out the PSD
+		Divide data into windows
+		i.e. 50 seconds divided into 10 second chunks
+			noise is independent of each other since each chunk is independent
+			For each chunk calculate PSD and then avg
+
+	Much less noise but has tradeoff: Frequency resolution is less precise since the 	durations are shorter
+	
